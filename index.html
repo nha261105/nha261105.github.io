@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nguyen Hoang Anh — Backend Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -16,37 +16,42 @@
     />
   </head>
   <body>
-    <!-- ==========================================
-       TOPBAR
-  =========================================== -->
+    <!-- TOPBAR -->
     <header id="topbar">
       <div class="topbar-inner">
         <span class="topbar-logo">Hoang Anh</span>
-        <nav>
-          <ul class="topbar-nav">
-            <li><a href="#intro" class="active">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#interests">Interests</a></li>
-          </ul>
-        </nav>
+        <div class="topbar-right">
+          <nav>
+            <ul class="topbar-nav">
+              <li><a href="#intro" class="active">Home</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#interests">Interests</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <button
+            id="theme-toggle"
+            aria-label="Toggle theme"
+            title="Toggle dark/light mode"
+          >
+            🌙
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- ==========================================
-       WRAPPER (sidebar + main centered)
-  =========================================== -->
+    <!-- WRAPPER -->
     <div id="wrapper">
-      <!-- SIDEBAR -->
+      <!-- SIDEBAR CARD -->
       <aside id="sidebar">
-        <!-- Avatar placeholder — replace with <img> when you have a photo -->
-        <!-- <div class="avatar-placeholder">👤</div> -->
         <img
           class="avatar-img"
           src="assets/avatar.jpg"
           alt="Nguyen Hoang Anh"
         />
+        <!-- <div class="avatar-placeholder">👤</div> -->
 
         <p class="sidebar-name">Nguyen Hoang Anh</p>
         <p class="sidebar-role">// Backend Engineer</p>
@@ -56,31 +61,36 @@
           infrastructure that scales.
         </p>
 
-        <hr class="sidebar-divider" />
+        <!-- 3-column social icons -->
+        <div class="sidebar-socials">
+          <a href="assets/resume.pdf" target="_blank" class="social-btn">
+            <i class="devicon-readthedocs-original"></i>
+          </a>
+          <a
+            href="https://github.com/nha261105"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="devicon-github-original"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/nha261105"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="devicon-linkedin-plain colored"></i>
+          </a>
+        </div>
 
-        <div class="sidebar-links">
-          <a href="assets/resume.pdf" target="_blank">
-            <span class="link-icon">📄</span> Resume
-          </a>
-          <a href="https://linkedin.com/in/nha261105" target="_blank">
-            <span class="link-icon">
-              <i class="devicon-linkedin-plain colored"></i>
-            </span>
-            LinkedIn
-          </a>
-          <a href="https://github.com/nha261105" target="_blank">
-            <span class="link-icon">
-              <i class="devicon-github-original"></i>
-            </span>
-            GitHub
-          </a>
+        <!-- Extra contact -->
+        <!-- <div class="sidebar-links">
           <a href="mailto:nha261105@gmail.com">
             <span class="link-icon">✉️</span> nha261105@gmail.com
           </a>
           <a href="tel:+84985922611">
             <span class="link-icon">📱</span> 0985 922 611
           </a>
-        </div>
+        </div> -->
 
         <p class="sidebar-footer">© <span id="year"></span> Nguyen Hoang Anh</p>
       </aside>
@@ -95,7 +105,7 @@
           </h1>
           <p class="intro-text">
             A Software Engineering student at Sai Gon University with a strong
-            foundation in Java, Python, and DevOps. My goal is to become a
+            foundation in Python, TypeScript, and DevOps. My goal is to become a
             <strong>Cloud/Systems Engineer</strong> — passionate about
             high-availability architectures, cloud orchestration, and resilient
             systems that scale.
@@ -104,6 +114,10 @@
             <span class="badge hi">Available for Internship</span>
             <span class="badge">Ho Chi Minh City, Vietnam</span>
             <span class="badge">Expected 2028</span>
+          </div>
+          <div class="scroll-cue">
+            <div class="scroll-cue-line"></div>
+            scroll down
           </div>
         </div>
 
@@ -137,9 +151,8 @@
                 <span class="tag"
                   ><i class="devicon-express-original"></i> Express.js</span
                 >
-                <span class="tag">
-                  <i class="devicon-fastapi-plain colored"></i>
-                  FastApi</span
+                <span class="tag"
+                  ><i class="devicon-fastapi-plain colored"></i> FastAPI</span
                 >
                 <span class="tag"
                   ><i class="devicon-react-original"></i> React</span
@@ -168,15 +181,7 @@
               <div class="tags">
                 <span class="tag"
                   ><i class="devicon-amazonwebservices-plain-wordmark"></i>
-                  S3</span
-                >
-                <span class="tag"
-                  ><i class="devicon-amazonwebservices-plain-wordmark"></i>
-                  EC2</span
-                >
-                <span class="tag"
-                  ><i class="devicon-amazonwebservices-plain-wordmark"></i>
-                  RDS</span
+                  AWS</span
                 >
                 <span class="tag"
                   ><i class="devicon-postgresql-plain"></i> PostgreSQL</span
@@ -192,7 +197,6 @@
         <div id="projects" class="section">
           <h2 class="section-title">Projects</h2>
           <div class="project-list">
-            <!-- Project 1 -->
             <div class="project-item reveal">
               <div class="project-meta">
                 <span class="status s-active">In Progress</span>
@@ -201,7 +205,7 @@
               <h3 class="project-title">AI Content Moderation Pipeline</h3>
               <p class="project-desc">
                 Automated media moderation system using an async event-driven
-                architecture. Integrates Amazon Rekognition & Transcribe to
+                architecture. Integrates Amazon Rekognition &amp; Transcribe to
                 detect sensitive content, orchestrated via AWS Step Functions.
               </p>
               <ul class="project-highlights">
@@ -227,13 +231,13 @@
               </div>
               <div class="project-links">
                 <img
+                  class="shield-badge"
                   src="https://img.shields.io/badge/Status-In_Development-f59e0b?style=flat"
                   alt="In Development"
                 />
               </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="project-item reveal">
               <div class="project-meta">
                 <span class="status s-done">Completed</span>
@@ -261,6 +265,7 @@
               <div class="project-links">
                 <a href="https://github.com/nha261105/CNPM" target="_blank">
                   <img
+                    class="shield-badge"
                     src="https://img.shields.io/badge/GitHub-View_on_GitHub-181717?style=flat&logo=github&logoColor=white"
                     alt="GitHub"
                   />
@@ -268,7 +273,6 @@
               </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="project-item reveal">
               <div class="project-meta">
                 <span class="status s-done">Completed</span>
@@ -280,7 +284,7 @@
                 test coverage including load testing with JMeter.
               </p>
               <ul class="project-highlights">
-                <li>JWT auth with SQL Injection & XSS prevention</li>
+                <li>JWT auth with SQL Injection &amp; XSS prevention</li>
                 <li>
                   Unit (JUnit/Mockito), Integration, and Performance testing
                 </li>
@@ -300,6 +304,7 @@
                   target="_blank"
                 >
                   <img
+                    class="shield-badge"
                     src="https://img.shields.io/badge/GitHub-View_on_GitHub-181717?style=flat&logo=github&logoColor=white"
                     alt="GitHub"
                   />
@@ -324,7 +329,7 @@
                 <span>Expected 2028</span>
               </div>
               <p class="edu-courses">
-                Data Structures & Algorithms · OOP (Java) · Software Testing &
+                Data Structures &amp; Algorithms · OOP · Software Testing &amp;
                 QA · Database Management
               </p>
             </div>
@@ -341,11 +346,10 @@
               <div class="int-emoji">⚡</div>
               <p class="int-title">Competitive Programming</p>
               <p class="int-desc">
-                Codeforces & LeetCode. Training for University Olympiad in
+                Codeforces &amp; LeetCode. Training for University Olympiad in
                 Informatics (Dec 2026).
               </p>
             </div>
-
             <div class="int-card reveal">
               <div class="int-emoji">☁️</div>
               <p class="int-title">Cloud Native</p>
@@ -354,20 +358,78 @@
                 cloud-native patterns.
               </p>
             </div>
-
             <div class="int-card reveal">
               <div class="int-emoji">🐧</div>
               <p class="int-title">Linux Enthusiast</p>
               <p class="int-desc">
-                Arch Linux + Hyprland daily driver. System customization &
+                Arch Linux + Hyprland daily driver. System customization &amp;
                 workflow optimization.
               </p>
             </div>
           </div>
         </div>
+
+        <hr />
+
+        <!-- CONTACT -->
+        <div id="contact" class="section reveal">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-layout">
+            <!-- Left: info -->
+            <div class="contact-info">
+              <p>
+                I'm open to internship opportunities, collaborations, or just a
+                chat about backend systems and cloud architecture. Feel free to
+                reach out!
+              </p>
+              <div class="contact-detail">
+                <a href="mailto:nha261105@gmail.com">
+                  <span>✉️</span> nha261105@gmail.com
+                </a>
+                <a href="tel:+84985922611"> <span>📱</span> 0985 922 611 </a>
+              </div>
+            </div>
+
+            <!-- Right: form -->
+            <div>
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label for="cf-name">Full Name</label>
+                  <input
+                    type="text"
+                    id="cf-name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Email</label>
+                  <input
+                    type="email"
+                    id="cf-email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cf-message">Message</label>
+                  <textarea
+                    id="cf-message"
+                    rows="5"
+                    placeholder="Hi Hoang Anh, I'd like to..."
+                    required
+                  ></textarea>
+                </div>
+                <p class="form-success" id="formSuccess">
+                  ✓ Message sent! I'll get back to you soon.
+                </p>
+                <button type="submit" class="btn-send">Send Message →</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
-    <!-- /wrapper -->
 
     <script src="script.js"></script>
   </body>
