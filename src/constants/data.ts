@@ -45,6 +45,7 @@ export interface InterestItem {
 
 import meJpg from '../assets/me.jpg';
 import cvPdf from '../assets/CV_Nguyen_Hoang_Anh.pdf';
+import imgSmartDocAI from '../assets/img_SmartDocAI.png';
 
 export const personalInfo = {
   name: "Nguyen Hoang Anh",
@@ -111,7 +112,7 @@ export const projects: Project[] = [
     tech: ["Python", "LangChain", "FAISS", "Ollama (Qwen2.5)", "Streamlit"],
     github: "https://github.com/nha261105",
     demo: null,
-    image: "/src/assets/img_SmartDocAI.png"
+    image: imgSmartDocAI
   },
   {
     id: 3,
